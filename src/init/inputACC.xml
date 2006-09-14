@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<service name="AgentCommunicationChannel">
+
+ <serviceDirectoryEntry serviceType="::FIPA::ACC" serviceId="acc">
+  <serviceLocator serviceSignature="org.fipa.standard.acc" serviceAddress="acc" />
+ </serviceDirectoryEntry>
+
+ <description>    
+  ACC es un servicio basico encargado de proporcionar el servicio de transporte en la plataforma de agentes.
+ </description>
+
+</service>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<service name="AgentManagementSystem">
+
+ <serviceDirectoryEntry serviceType="::FIPA::AMS" serviceId="ams">
+  <serviceLocator serviceSignature="org.fipa.standard.ams" serviceAddress="ams" />
+ </serviceDirectoryEntry>
+
+ <description>    
+  AMS es un servicio basico encargado de la gestion de la plataforma de agentes.
+ </description>
+
+</service>

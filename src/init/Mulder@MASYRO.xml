@@ -1,0 +1,627 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<MIB>
+  <system name='MASYRO'>
+    <linguisticvar type='in' name='C'>
+      <fuzzyset a='2.46244812012' c='38.1798248291' b='2.46244812012' d='73.8972015381' label='VS'/>
+      <fuzzyset a='38.1798248291' c='73.8972015381' b='73.8972015381' d='109.614578247' label='S'/>
+      <fuzzyset a='73.8972015381' c='111.614578247' b='109.614578247' d='147.331954956' label='N'/>
+      <fuzzyset a='111.614578247' c='147.331954956' b='147.331954956' d='183.049331665' label='B'/>
+      <fuzzyset a='147.331954956' c='218.766708374' b='183.049331665' d='218.766708374' label='VB'/>
+    </linguisticvar>
+    <linguisticvar type='in' name='Nd'>
+      <fuzzyset a='25.5713100433' c='84.7090768814' b='25.5713100433' d='143.846843719' label='VS'/>
+      <fuzzyset a='84.7090768814' c='143.846843719' b='143.846843719' d='202.984610558' label='S'/>
+      <fuzzyset a='143.846843719' c='204.984610558' b='202.984610558' d='264.122377396' label='N'/>
+      <fuzzyset a='204.984610558' c='264.122377396' b='264.122377396' d='323.260144234' label='B'/>
+      <fuzzyset a='264.122377396' c='382.397911072' b='323.260144234' d='382.397911072' label='VB'/>
+    </linguisticvar>
+    <linguisticvar type='in' name='S'>
+      <fuzzyset a='49151' c='86015' b='49151' d='122879' label='S'/>
+      <fuzzyset a='86015' c='122881' b='122879' d='159745' label='N'/>
+      <fuzzyset a='122881' c='196609' b='159745' d='196609' label='B'/>
+    </linguisticvar>
+    <linguisticvar type='in' name='Op'>
+      <fuzzyset a='0' c='5' b='0' d='10' label='VS'/>
+      <fuzzyset a='5' c='10' b='10' d='15' label='S'/>
+      <fuzzyset a='10' c='15' b='15' d='20' label='N'/>
+      <fuzzyset a='15' c='20' b='20' d='25' label='B'/>
+      <fuzzyset a='20' c='30' b='25' d='30' label='VB'/>
+    </linguisticvar>
+    <linguisticvar type='out' name='Ibs'>
+      <fuzzyset a='0' c='5' b='0' d='10' label='VS'/>
+      <fuzzyset a='5' c='10' b='10' d='15' label='S'/>
+      <fuzzyset a='10' c='15' b='15' d='20' label='N'/>
+      <fuzzyset a='15' c='20' b='20' d='25' label='B'/>
+      <fuzzyset a='20' c='30' b='25' d='30' label='VB'/>
+    </linguisticvar>
+    <linguisticvar type='out' name='Ls'>
+      <fuzzyset a='1' c='3' b='1' d='5' label='VS'/>
+      <fuzzyset a='3' c='5' b='5' d='7' label='S'/>
+      <fuzzyset a='5' c='7' b='7' d='9' label='N'/>
+      <fuzzyset a='7' c='9' b='9' d='1' label='B'/>
+      <fuzzyset a='9' c='13' b='11' d='13' label='VB'/>
+    </linguisticvar>
+    <linguisticvar type='out' name='Rl'>
+      <fuzzyset a='1' c='2' b='1' d='3' label='VS'/>
+      <fuzzyset a='2' c='3' b='3' d='4' label='S'/>
+      <fuzzyset a='3' c='5' b='5' d='7' label='N'/>
+      <fuzzyset a='6' c='7' b='7' d='8' label='B'/>
+      <fuzzyset a='7' c='9' b='8' d='9' label='VB'/>
+    </linguisticvar>
+    <rule name='R1'>
+      <antecedent varname='C' linguisticlabel='B'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='VB'/>
+      <consequence varname='Ls' linguisticlabel='VS'/>
+      <consequence varname='Rl' linguisticlabel='VS'/>
+    </rule>
+    <rule name='R2'>
+      <antecedent varname='C' linguisticlabel='B'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='VB'/>
+      <consequence varname='Ls' linguisticlabel='VS'/>
+      <consequence varname='Rl' linguisticlabel='VS'/>
+    </rule>
+    <rule name='R3'>
+      <antecedent varname='C' linguisticlabel='VB'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='VB'/>
+      <consequence varname='Ls' linguisticlabel='VS'/>
+      <consequence varname='Rl' linguisticlabel='VS'/>
+    </rule>
+    <rule name='R4'>
+      <antecedent varname='C' linguisticlabel='VB'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='VB'/>
+      <consequence varname='Ls' linguisticlabel='VS'/>
+      <consequence varname='Rl' linguisticlabel='VS'/>
+    </rule>
+    <rule name='R5'>
+      <antecedent varname='C' linguisticlabel='N'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='VB'/>
+      <consequence varname='Ls' linguisticlabel='VS'/>
+      <consequence varname='Rl' linguisticlabel='VS'/>
+    </rule>
+    <rule name='R6'>
+      <antecedent varname='C' linguisticlabel='N'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='VB'/>
+      <consequence varname='Ls' linguisticlabel='VS'/>
+      <consequence varname='Rl' linguisticlabel='VS'/>
+    </rule>
+    <rule name='R7'>
+      <antecedent varname='C' linguisticlabel='S'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='VB'/>
+      <consequence varname='Ls' linguisticlabel='S'/>
+      <consequence varname='Rl' linguisticlabel='S'/>
+    </rule>
+    <rule name='R8'>
+      <antecedent varname='C' linguisticlabel='S'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='VB'/>
+      <consequence varname='Ls' linguisticlabel='S'/>
+      <consequence varname='Rl' linguisticlabel='S'/>
+    </rule>
+    <rule name='R9'>
+      <antecedent varname='C' linguisticlabel='VS'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='VB'/>
+      <consequence varname='Ls' linguisticlabel='S'/>
+      <consequence varname='Rl' linguisticlabel='S'/>
+    </rule>
+    <rule name='R10'>
+      <antecedent varname='C' linguisticlabel='VS'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='VB'/>
+      <consequence varname='Ls' linguisticlabel='S'/>
+      <consequence varname='Rl' linguisticlabel='S'/>
+    </rule>
+    <rule name='R11'>
+      <antecedent varname='C' linguisticlabel='VS'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='VB'/>
+      <consequence varname='Ls' linguisticlabel='S'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R12'>
+      <antecedent varname='C' linguisticlabel='S'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='VB'/>
+      <consequence varname='Ls' linguisticlabel='S'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R13'>
+      <antecedent varname='C' linguisticlabel='N'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='VB'/>
+      <consequence varname='Ls' linguisticlabel='S'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R14'>
+      <antecedent varname='C' linguisticlabel='B'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='VB'/>
+      <consequence varname='Ls' linguisticlabel='S'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R15'>
+      <antecedent varname='C' linguisticlabel='VB'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='VB'/>
+      <consequence varname='Ls' linguisticlabel='S'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R16'>
+      <antecedent varname='C' linguisticlabel='B'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='B'/>
+      <consequence varname='Ls' linguisticlabel='S'/>
+      <consequence varname='Rl' linguisticlabel='VS'/>
+    </rule>
+    <rule name='R17'>
+      <antecedent varname='C' linguisticlabel='B'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='B'/>
+      <consequence varname='Ls' linguisticlabel='S'/>
+      <consequence varname='Rl' linguisticlabel='VS'/>
+    </rule>
+    <rule name='R18'>
+      <antecedent varname='C' linguisticlabel='VB'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='B'/>
+      <consequence varname='Ls' linguisticlabel='S'/>
+      <consequence varname='Rl' linguisticlabel='VS'/>
+    </rule>
+    <rule name='R19'>
+      <antecedent varname='C' linguisticlabel='VB'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='B'/>
+      <consequence varname='Ls' linguisticlabel='S'/>
+      <consequence varname='Rl' linguisticlabel='VS'/>
+    </rule>
+    <rule name='R20'>
+      <antecedent varname='C' linguisticlabel='N'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='B'/>
+      <consequence varname='Ls' linguisticlabel='S'/>
+      <consequence varname='Rl' linguisticlabel='VS'/>
+    </rule>
+    <rule name='R21'>
+      <antecedent varname='C' linguisticlabel='N'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='B'/>
+      <consequence varname='Ls' linguisticlabel='S'/>
+      <consequence varname='Rl' linguisticlabel='VS'/>
+    </rule>
+    <rule name='R22'>
+      <antecedent varname='C' linguisticlabel='S'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='B'/>
+      <consequence varname='Ls' linguisticlabel='N'/>
+      <consequence varname='Rl' linguisticlabel='S'/>
+    </rule>
+    <rule name='R23'>
+      <antecedent varname='C' linguisticlabel='S'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='B'/>
+      <consequence varname='Ls' linguisticlabel='N'/>
+      <consequence varname='Rl' linguisticlabel='S'/>
+    </rule>
+    <rule name='R24'>
+      <antecedent varname='C' linguisticlabel='VS'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='B'/>
+      <consequence varname='Ls' linguisticlabel='N'/>
+      <consequence varname='Rl' linguisticlabel='S'/>
+    </rule>
+    <rule name='R25'>
+      <antecedent varname='C' linguisticlabel='VS'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='B'/>
+      <consequence varname='Ls' linguisticlabel='N'/>
+      <consequence varname='Rl' linguisticlabel='S'/>
+    </rule>
+    <rule name='R26'>
+      <antecedent varname='C' linguisticlabel='VS'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='B'/>
+      <consequence varname='Ls' linguisticlabel='N'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R27'>
+      <antecedent varname='C' linguisticlabel='S'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='B'/>
+      <consequence varname='Ls' linguisticlabel='N'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R28'>
+      <antecedent varname='C' linguisticlabel='N'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='B'/>
+      <consequence varname='Ls' linguisticlabel='N'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R29'>
+      <antecedent varname='C' linguisticlabel='B'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='B'/>
+      <consequence varname='Ls' linguisticlabel='N'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R30'>
+      <antecedent varname='C' linguisticlabel='VB'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='B'/>
+      <consequence varname='Ls' linguisticlabel='N'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R31'>
+      <antecedent varname='C' linguisticlabel='B'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='N'/>
+      <consequence varname='Ls' linguisticlabel='N'/>
+      <consequence varname='Rl' linguisticlabel='S'/>
+    </rule>
+    <rule name='R32'>
+      <antecedent varname='C' linguisticlabel='B'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='N'/>
+      <consequence varname='Ls' linguisticlabel='N'/>
+      <consequence varname='Rl' linguisticlabel='S'/>
+    </rule>
+    <rule name='R33'>
+      <antecedent varname='C' linguisticlabel='VB'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='N'/>
+      <consequence varname='Ls' linguisticlabel='N'/>
+      <consequence varname='Rl' linguisticlabel='S'/>
+    </rule>
+    <rule name='R34'>
+      <antecedent varname='C' linguisticlabel='VB'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='N'/>
+      <consequence varname='Ls' linguisticlabel='N'/>
+      <consequence varname='Rl' linguisticlabel='S'/>
+    </rule>
+    <rule name='R35'>
+      <antecedent varname='C' linguisticlabel='N'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='N'/>
+      <consequence varname='Ls' linguisticlabel='N'/>
+      <consequence varname='Rl' linguisticlabel='S'/>
+    </rule>
+    <rule name='R36'>
+      <antecedent varname='C' linguisticlabel='N'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='N'/>
+      <consequence varname='Ls' linguisticlabel='N'/>
+      <consequence varname='Rl' linguisticlabel='S'/>
+    </rule>
+    <rule name='R37'>
+      <antecedent varname='C' linguisticlabel='S'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='N'/>
+      <consequence varname='Ls' linguisticlabel='N'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R38'>
+      <antecedent varname='C' linguisticlabel='S'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='N'/>
+      <consequence varname='Ls' linguisticlabel='N'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R39'>
+      <antecedent varname='C' linguisticlabel='VS'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='N'/>
+      <consequence varname='Ls' linguisticlabel='N'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R40'>
+      <antecedent varname='C' linguisticlabel='VS'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='N'/>
+      <consequence varname='Ls' linguisticlabel='N'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R41'>
+      <antecedent varname='C' linguisticlabel='VS'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='N'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+      <consequence varname='Rl' linguisticlabel='B'/>
+    </rule>
+    <rule name='R42'>
+      <antecedent varname='C' linguisticlabel='S'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='N'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+      <consequence varname='Rl' linguisticlabel='B'/>
+    </rule>
+    <rule name='R43'>
+      <antecedent varname='C' linguisticlabel='N'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='N'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+      <consequence varname='Rl' linguisticlabel='B'/>
+    </rule>
+    <rule name='R44'>
+      <antecedent varname='C' linguisticlabel='B'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='N'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+      <consequence varname='Rl' linguisticlabel='B'/>
+    </rule>
+    <rule name='R45'>
+      <antecedent varname='C' linguisticlabel='VB'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='N'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+      <consequence varname='Rl' linguisticlabel='B'/>
+    </rule>
+    <rule name='R46'>
+      <antecedent varname='C' linguisticlabel='B'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='S'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R47'>
+      <antecedent varname='C' linguisticlabel='B'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='S'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R48'>
+      <antecedent varname='C' linguisticlabel='VB'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='S'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R49'>
+      <antecedent varname='C' linguisticlabel='VB'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='S'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R50'>
+      <antecedent varname='C' linguisticlabel='N'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='S'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R51'>
+      <antecedent varname='C' linguisticlabel='N'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='S'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R52'>
+      <antecedent varname='C' linguisticlabel='S'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='S'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+      <consequence varname='Rl' linguisticlabel='B'/>
+    </rule>
+    <rule name='R53'>
+      <antecedent varname='C' linguisticlabel='S'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='S'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+      <consequence varname='Rl' linguisticlabel='B'/>
+    </rule>
+    <rule name='R54'>
+      <antecedent varname='C' linguisticlabel='VS'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='S'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+      <consequence varname='Rl' linguisticlabel='B'/>
+    </rule>
+    <rule name='R55'>
+      <antecedent varname='C' linguisticlabel='VS'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='S'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+      <consequence varname='Rl' linguisticlabel='B'/>
+    </rule>
+    <rule name='R56'>
+      <antecedent varname='C' linguisticlabel='VS'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='S'/>
+      <consequence varname='Ls' linguisticlabel='VB'/>
+      <consequence varname='Rl' linguisticlabel='B'/>
+    </rule>
+    <rule name='R57'>
+      <antecedent varname='C' linguisticlabel='S'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='S'/>
+      <consequence varname='Ls' linguisticlabel='VB'/>
+      <consequence varname='Rl' linguisticlabel='B'/>
+    </rule>
+    <rule name='R58'>
+      <antecedent varname='C' linguisticlabel='N'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='S'/>
+      <consequence varname='Ls' linguisticlabel='VB'/>
+      <consequence varname='Rl' linguisticlabel='B'/>
+    </rule>
+    <rule name='R59'>
+      <antecedent varname='C' linguisticlabel='B'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='S'/>
+      <consequence varname='Ls' linguisticlabel='VB'/>
+      <consequence varname='Rl' linguisticlabel='B'/>
+    </rule>
+    <rule name='R60'>
+      <antecedent varname='C' linguisticlabel='VB'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='S'/>
+      <consequence varname='Ls' linguisticlabel='VB'/>
+      <consequence varname='Rl' linguisticlabel='B'/>
+    </rule>
+    <rule name='R61'>
+      <antecedent varname='C' linguisticlabel='B'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='VS'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R62'>
+      <antecedent varname='C' linguisticlabel='B'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='VS'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R63'>
+      <antecedent varname='C' linguisticlabel='VB'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='VS'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R64'>
+      <antecedent varname='C' linguisticlabel='VB'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='VS'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+      <consequence varname='Rl' linguisticlabel='N'/>
+    </rule>
+    <rule name='R65'>
+      <antecedent varname='C' linguisticlabel='N'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='VS'/>
+      <consequence varname='Ls' linguisticlabel='VB'/>
+      <consequence varname='Rl' linguisticlabel='B'/>
+    </rule>
+    <rule name='R66'>
+      <antecedent varname='C' linguisticlabel='N'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='VS'/>
+      <consequence varname='Ls' linguisticlabel='VB'/>
+      <consequence varname='Rl' linguisticlabel='B'/>
+    </rule>
+    <rule name='R67'>
+      <antecedent varname='C' linguisticlabel='S'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='VS'/>
+      <consequence varname='Ls' linguisticlabel='VB'/>
+      <consequence varname='Rl' linguisticlabel='VB'/>
+    </rule>
+    <rule name='R68'>
+      <antecedent varname='C' linguisticlabel='S'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='VS'/>
+      <consequence varname='Ls' linguisticlabel='VB'/>
+      <consequence varname='Rl' linguisticlabel='VB'/>
+    </rule>
+    <rule name='R69'>
+      <antecedent varname='C' linguisticlabel='VS'/>
+      <antecedent varname='S' linguisticlabel='B'/>
+      <antecedent varname='Op' linguisticlabel='VS'/>
+      <consequence varname='Ls' linguisticlabel='VB'/>
+      <consequence varname='Rl' linguisticlabel='VB'/>
+    </rule>
+    <rule name='R70'>
+      <antecedent varname='C' linguisticlabel='VS'/>
+      <antecedent varname='S' linguisticlabel='N'/>
+      <antecedent varname='Op' linguisticlabel='VS'/>
+      <consequence varname='Ls' linguisticlabel='VB'/>
+      <consequence varname='Rl' linguisticlabel='VB'/>
+    </rule>
+    <rule name='R71'>
+      <antecedent varname='C' linguisticlabel='VS'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='VS'/>
+      <consequence varname='Ls' linguisticlabel='VB'/>
+      <consequence varname='Rl' linguisticlabel='VB'/>
+    </rule>
+    <rule name='R72'>
+      <antecedent varname='C' linguisticlabel='S'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='VS'/>
+      <consequence varname='Ls' linguisticlabel='VB'/>
+      <consequence varname='Rl' linguisticlabel='VB'/>
+    </rule>
+    <rule name='R73'>
+      <antecedent varname='C' linguisticlabel='N'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='VS'/>
+      <consequence varname='Ls' linguisticlabel='VB'/>
+      <consequence varname='Rl' linguisticlabel='VB'/>
+    </rule>
+    <rule name='R74'>
+      <antecedent varname='C' linguisticlabel='B'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='VS'/>
+      <consequence varname='Ls' linguisticlabel='VB'/>
+      <consequence varname='Rl' linguisticlabel='VB'/>
+    </rule>
+    <rule name='R75'>
+      <antecedent varname='C' linguisticlabel='VB'/>
+      <antecedent varname='S' linguisticlabel='S'/>
+      <antecedent varname='Op' linguisticlabel='VS'/>
+      <consequence varname='Ls' linguisticlabel='VB'/>
+      <consequence varname='Rl' linguisticlabel='VB'/>
+    </rule>
+    <rule name='R76'>
+      <antecedent varname='C' linguisticlabel='VB'/>
+      <antecedent varname='Nd' linguisticlabel='VB'/>
+      <consequence varname='Ls' linguisticlabel='VB'/>
+    </rule>
+    <rule name='R77'>
+      <antecedent varname='C' linguisticlabel='B'/>
+      <antecedent varname='Nd' linguisticlabel='VB'/>
+      <consequence varname='Ls' linguisticlabel='VB'/>
+    </rule>
+    <rule name='R78'>
+      <antecedent varname='Nd' linguisticlabel='VB'/>
+      <consequence varname='Ibs' linguisticlabel='VB'/>
+    </rule>
+    <rule name='R79'>
+      <antecedent varname='C' linguisticlabel='VB'/>
+      <antecedent varname='Nd' linguisticlabel='B'/>
+      <consequence varname='Ls' linguisticlabel='VB'/>
+    </rule>
+    <rule name='R80'>
+      <antecedent varname='C' linguisticlabel='B'/>
+      <antecedent varname='Nd' linguisticlabel='B'/>
+      <consequence varname='Ls' linguisticlabel='VB'/>
+    </rule>
+    <rule name='R81'>
+      <antecedent varname='Nd' linguisticlabel='B'/>
+      <consequence varname='Ibs' linguisticlabel='B'/>
+    </rule>
+    <rule name='R82'>
+      <antecedent varname='C' linguisticlabel='VB'/>
+      <antecedent varname='Nd' linguisticlabel='N'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+    </rule>
+    <rule name='R83'>
+      <antecedent varname='C' linguisticlabel='B'/>
+      <antecedent varname='Nd' linguisticlabel='N'/>
+      <consequence varname='Ls' linguisticlabel='B'/>
+    </rule>
+    <rule name='R84'>
+      <antecedent varname='Nd' linguisticlabel='N'/>
+      <consequence varname='Ibs' linguisticlabel='N'/>
+    </rule>
+    <rule name='R85'>
+      <antecedent varname='Nd' linguisticlabel='S'/>
+      <consequence varname='Ibs' linguisticlabel='S'/>
+    </rule>
+    <rule name='R86'>
+      <antecedent varname='Nd' linguisticlabel='VS'/>
+      <consequence varname='Ibs' linguisticlabel='VS'/>
+    </rule>
+  </system>
+</MIB>

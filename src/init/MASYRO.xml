@@ -1,0 +1,79 @@
+<icegrid>
+
+ <application name="MASYRO">
+
+  <node name="localhost">
+
+   <server id="StartService" exe="./StartService" activation="on-demand">
+    <adapter name="StartServiceAdapter" id="StartServiceAdapter" register-process="true" endpoints="tcp">
+     <object identity="startService" type="::FIPA::StartService"/>
+    </adapter>
+    <property name="IdentitySS" value="startService"/>
+    <property name="InputSS" value="./init/inputSS.xml"/>
+   </server>
+
+   <server id="AMS" exe="./AMS" activation="on-demand">
+    <adapter name="AMSAdapter" id="AMSAdapter" register-process="true" endpoints="tcp">
+     <object identity="ams" type="::FIPA::AMS"/>
+    </adapter>
+    <property name="IdentityAMS" value="ams"/>
+    <property name="InputAMS" value="./init/inputAMS.xml"/>
+   </server>
+
+   <server id="DirectoryFacilitator" exe="./DirectoryFacilitator" activation="on-demand">
+    <adapter name="DirectoryFacilitatorAdapter" id="DirectoryFacilitatorAdapter" register-process="true" endpoints="tcp">
+     <object identity="directoryFacilitator" type="::FIPA::DirectoryFacilitator"/>
+    </adapter>
+    <property name="IdentityDF" value="directoryFacilitator"/>
+    <property name="InputDF" value="./init/inputDF.xml"/>
+   </server>
+
+   <server id="ACC" exe="./ACC" activation="on-demand">
+    <adapter name="ACCAdapter" id="ACCAdapter" register-process="true" endpoints="tcp">
+     <object identity="acc" type="::FIPA::ACC"/>
+    </adapter>
+    <property name="IdentityACC" value="acc"/>
+    <property name="InputACC" value="./init/inputACC.xml"/>
+   </server>
+
+   <server id="ModelRepository" exe="./ModelRepository.py" activation="on-demand">
+    <adapter name="ModelRepositoryAdapter" id="ModelRepositoryAdapter" register-process="true" endpoints="tcp">
+     <object identity="modelRepository" type="::MASYRO::ModelRepository"/>
+    </adapter>
+    <property name="IdentityMR" value="modelRepository"/>
+    <property name="InputMR" value="./init/inputMR.xml"/>
+    <property name="Ice.MessageSizeMax" value="10240"/>
+   </server>
+
+   <server id="Blackboard" exe="./Blackboard.py" activation="on-demand">
+    <adapter name="BlackboardAdapter" id="BlackboardAdapter" register-process="true" endpoints="tcp">
+     <object identity="blackboard" type="::MASYRO::Blackboard"/>
+    </adapter>
+    <property name="IdentityBB" value="blackboard"/>
+    <property name="InputBB" value="./init/inputBB.xml"/>
+    <property name="Ice.MessageSizeMax" value="10240"/>
+   </server>
+
+   <server id="Master" exe="./Master.py" activation="on-demand">
+    <adapter name="MasterAdapter" id="MasterAdapter" register-process="true" endpoints="tcp">
+     <object identity="master" type="::MASYRO::Master"/>
+    </adapter>
+    <property name="IdentityMA" value="master"/>
+    <property name="InputMA" value="./init/inputMA.xml"/>
+    <property name="Ice.MessageSizeMax" value="10240"/>
+   </server>
+
+   <server id="Analyst" exe="./Analyst.py" activation="on-demand">
+    <adapter name="AnalystAdapter" id="AnalystAdapter" register-process="true" endpoints="tcp">
+     <object identity="analyst" type="::MASYRO::Analyst"/>
+    </adapter>
+    <property name="IdentityAN" value="analyst"/>
+    <property name="InputAN" value="./init/inputAN.xml"/>
+    <property name="Ice.MessageSizeMax" value="10240"/>
+   </server>
+
+  </node>
+
+ </application>
+
+</icegrid>

@@ -1,0 +1,38 @@
+Para instalar MASYRO:
+
+sh initMASYRO.sh
+
+Para arrancar MASYRO:
+
+sh startMASYRO.sh
+(Ctrl+c para finalizar glacier2router)
+
+Para detener MASYRO:
+
+sh stopMASYRO.sh
+
+Para arrancar un agente (Ctrl+c para finalizar):
+
+python RenderAgent.py -i <file.xml>
+Ej: python RenderAgent.py -i ./init/render1.xml
+
+Para enviar un trabajo (Ctrol+c para finalizar):
+
+python Boss.py -p <divisionLevel> -o <optimizationLevel> -w <work.zip> -n <workName>
+Ej: python Boss.py -p 3 -o 3 -w render/dragonYaf.zip -n dragon
+
+
+
+*** NOTA 1: Se asume que todos los servidores se ejecutan en las misma máquina.
+*** NOTA 2: Es necesario ajustar los siguientes parámetros de configuración:
+
+- config/agent.cfg: -h <ip o url de la máquina en la que se ejecuta glacier2router>
+Ej: Ice.Default.Router=Glacier2/router:tcp -h ladorada.dyndns.org -p 8000
+    MyAdapter.Router=Glacier2/router:tcp -h ladorada.dyndns.org -p 8000
+
+- config/router.cfg: Glacier2.Client.Endpoints=tcp -h <ip de la máquina en la que se ejecuta glacier2router, dentro de la red>
+- config/router.cfg: Glacier2.Client.PublishedEndpoints=tcp -h <ip o url de la máquina en la que se ejecuta glacier2router, ip pública>
+- config/router.cfg: Glacier2.Server.Endpoints=tcp -h <ip de la máquina en la que se ejecuta glacier2router, dentro de la red>
+Ej: Glacier2.Client.Endpoints=tcp -h 192.168.1.3 -p 8000
+    Glacier2.Client.PublishedEndpoints=tcp -h ladorada.dyndns.org -p 8000
+    Glacier2.Server.Endpoints=tcp -h 192.168.1.3

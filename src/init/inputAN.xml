@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<service name="Analyst">
+
+ <serviceDirectoryEntry serviceType="::FIPA::Analyst" serviceId="analyst">
+  <serviceLocator serviceSignature="org.fipa.standard.analyst" serviceAddress="analyst" />
+ </serviceDirectoryEntry>
+
+ <description>    
+  Analyst es un servicio que lleva a cabo el analisis de la escena de entrada.
+ </description>
+
+</service>

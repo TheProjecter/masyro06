@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<service name="ModelRepository">
+
+ <serviceDirectoryEntry serviceType="::FIPA::ModelRepository" serviceId="modelRepository">
+  <serviceLocator serviceSignature="org.fipa.standard.modelRepository" serviceAddress="modelRepository" />
+ </serviceDirectoryEntry>
+
+ <description>    
+  ModelRepository es un servicio mediante el cual los agentes obtienen los distintos modelos de trabajo.
+ </description>
+
+</service>

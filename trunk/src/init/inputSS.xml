@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<service name="StartService">
+
+ <serviceDirectoryEntry serviceType="::FIPA::StartService" serviceId="startService">
+  <serviceLocator serviceSignature="org.fipa.standard.startService" serviceAddress="startService" />
+ </serviceDirectoryEntry>
+
+ <description>    
+  StartService es un servicio accesible por agentes y por servicios. Es el encargado de proveer a los agentes de los servicios basicos. 
+ </description>
+
+</service>

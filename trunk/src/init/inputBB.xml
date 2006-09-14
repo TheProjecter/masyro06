@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<service name="Blackboard">
+
+ <serviceDirectoryEntry serviceType="::FIPA::Blackboard" serviceId="blackboard">
+  <serviceLocator serviceSignature="org.fipa.standard.blackboard" serviceAddress="blackboard" />
+ </serviceDirectoryEntry>
+
+ <description>    
+  Blackboard es un servicio que representa la arquitectura de pizarra.
+ </description>
+
+</service>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<service name="Master">
+
+ <serviceDirectoryEntry serviceType="::FIPA::Master" serviceId="master">
+  <serviceLocator serviceSignature="org.fipa.standard.master" serviceAddress="master" />
+ </serviceDirectoryEntry>
+
+ <description>    
+  Master es un servicio que representa al gestor de un grupo de agentes.
+ </description>
+
+</service>

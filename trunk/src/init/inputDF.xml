@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<service name="DirectoryFacilitator">
+
+ <serviceDirectoryEntry serviceType="::FIPA::DirectoryFacilitator" serviceId="directoryFacilitator">
+  <serviceLocator serviceSignature="org.fipa.standard.directoryFacilitator" serviceAddress="directoryFacilitator" />
+ </serviceDirectoryEntry>
+
+ <description>    
+  Directory Facilitator es un servicio basico encargado de proporcionar un servicio de paginas amarillas.
+ </description>
+
+</service>

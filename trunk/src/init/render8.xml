@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<agent name="ElFumador">
+
+ <agentDescription>
+
+  <service name="render" type="render" />
+  <protocol value="fipa-request" />
+  <ontology value="fipa-agent-management" />
+  <language value="fipa-rdf0" />
+  <leaseTime value="86400" />
+  <scope value="global" />
+
+ </agentDescription>
+
+</agent>

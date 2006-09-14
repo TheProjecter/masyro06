@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=iso8859-1" />
+<meta name="author" content="David Vallejo Fernandez"/>
+<meta name="generator" content="Bluefish 1.0.5"/>
+<!--<META HTTP-EQUIV="refresh" CONTENT="10">-->
+<link rel="stylesheet" type="text/css" href="estilo.css" />
+<link rel="stylesheet" type="text/css" href="estilos.css" />
+<link rel="stylesheet" type="text/css" href="colores.css"/>
+<title>MASYRO: A Multi-Agent SYstem for Rendering Optimization</title>
+<style type="text/css"> .textoexp {
+font-family: Arial;
+color: black;
+font-size: 30pt;
+text-align: left;
+letter-spacing: -20px;
+} </style> <script type="text/javascript"> function
+expandirTexto(inicio, fin, paso, velo){
+if (inicio < fin){
+document.getElementById("textoexpand").style.letterSpacing = inicio+"px";
+inicio=inicio+paso;
+setTimeout("expandirTexto("+inicio+","+fin+","+paso+","+velo+")",velo);
+}
+}
+</script>
+</head>
+<body onLoad="javascript:cambiate(); javascript:expandirTexto(-20,30,1,5);">
+<div id="arriba"></div>
+<!-- ###### Cabecera ###### -->
+<div id="cabecera">
+<a href="./index.html" class="cabeceraTitulo" title="Homepage">
+<span class="textoexp" id="textoexpand">MASYRO</span></a>
+<div class="cabeceraEnlaces">
+<a href="http://oreto.inf-cr.uclm.es">ORETO Research Group</a>
+<a href="http://www.uclm.es">(UCLM)</a>
+</div>
+<!-- ###### Derecha ###### -->
+<div class="barraDerecha">
+</div>
+		<script>
+
+			function cambiate() {
+				var time = 1;   // Recargara la imagen cada "time" segundos
+
+				var now = new Date();
+				dd.elements.imagen.swapImage('smallsalida.jpg?' + now.getTime());
+
+				setTimeout("cambiate()", time * 1000);  
+
+				contenedor = document.getElementById("pos");
+				contenedor.innerHTML = "PosX = "+ dd.elements.transpbox.x  +" PosY = "+ dd.elements.transpbox.y +" W = "+ dd.elements.transpbox.w +" H = "+ dd.elements.transpbox.h; 
+
+			}
+			
+			function ocultar() {
+				if (dd.elements.transpbox.visible == true) { 
+				dd.elements.transpbox.hide();
+				dd.elements.zoomed.hide();
+				}
+				else {
+					dd.elements.transpbox.show();
+					dd.elements.zoomed.show();
+				}
+
+				contenedor = document.getElementById("pos"); 
+				contenedor.innerHTML = "New pos";
+			}	
+			
+			function deatach() {
+				contenedor = document.getElementById("dea"); 
+
+				if (dd.elements.zoomed.isAtached == true) {
+					dd.elements.transpbox.detachChild('zoomed');
+					dd.elements.zoomed.isAtached = false;
+					contenedor.innerHTML = "Attach";
+				}
+				else {
+					dd.elements.transpbox.attachChild('zoomed');
+					dd.elements.zoomed.isAtached = true;
+					contenedor.innerHTML = "Unattach";			
+				}
+				
+			}
+
+			function drop() {
+				dd.elements.transpbox.maxoffr = 500 - dd.elements.transpbox.w;
+				dd.elements.transpbox.maxoffb = 375 - dd.elements.transpbox.h;
+				params = "img=salida.jpg&";
+				params += "w="+ dd.elements.transpbox.w +"&";
+				params += "h="+ dd.elements.transpbox.h +"&";
+				params += "x="+ (dd.elements.transpbox.x - 60) +"&";
+				params += "y="+ (dd.elements.transpbox.y - 100) +"&";
+				params += "wz="+ dd.elements.zoomed.w +"&";
+				params += "hz="+ dd.elements.zoomed.h +"&";
+				params += "wo=500&";
+				params += "ho=375";
+				dd.elements.zoomed.swapImage('genimage.php?'+params); 		
+			}
+
+			function resize(param) {
+
+				if ((param != true) && (dd.elements.transpbox.resizecall != true)) {
+					dd.elements.transpbox.resizecall = true;
+					setTimeout("resize(true)", 500);  
+				}
+				if ((param == true) && (dd.elements.transpbox.resizecall == true)) {
+					dd.elements.transpbox.resizecall = false;
+					drop();
+				}
+				
+			}
+
+		</script>
+	
+	<!--	
+	</head>
+	
+	
+	<body onLoad="javascript:cambiate();">
+	
+		
+		<table align="center" border="0" witdh="900" height="500">
+		-->			
+
+		<script type="text/javascript" src="wz_dragdrop.js"></script>
+		<img src="transpbox.gif" style="position: absolute; left: 60px; top: 100px; height: 50x; width: 50px; padding:0px;" name="transpbox" width="50" height="50">
+		<div id="dea" onClick="deatach()"  style="position: absolute; left: 110px; top: 135px; height: 20x; width: 40px; padding:0px;font-family: helvetica,arial,sans-serif;">Unattach</div>
+		<img src="transpbox.gif" style="position: absolute; left: 110px; top: 150px; height: 200x; width: 200px; padding:0px;" name="zoomed" width="200" height="200">
+		<img style="position: absolute; left: 60px; top: 100px; height: 375x; width: 500px; padding:0px;" src="smallsalida.jpg" name="imagen" width="500" height="375" border="1"><br>
+		<a style="position: absolute; left: 60px; top: 480px; height: 100x; width: 180px; padding:0px;font-family: helvetica,arial,sans-serif;" href="javascript:ocultar()">Hide/Show Zoom Controls</a><br>
+		<div style="position: absolute; left: 60px; top: 500px; height: 400x; width: 300px; padding:0px;font-family: helvetica,arial,sans-serif;" id="pos">PosX: [    ]  PosY: [    ]  </div>
+
+		<script type="text/javascript">
+			SET_DHTML("transpbox"+TRANSPARENT+SCALABLE+MAXWIDTH+150+MINWIDTH+10+CURSOR_MOVE+NO_ALT+MAXOFFBOTTOM+325+MAXOFFRIGHT+450+MAXOFFTOP+0+MAXOFFLEFT+0, "imagen"+NO_DRAG, "dea"+NO_DRAG+CURSOR_HAND, "zoomed"+SCALABLE+MAXWIDTH+300+MINWIDTH+150);
+			dd.elements.transpbox.setResizeFunc(resize);
+			dd.elements.transpbox.setDropFunc(drop);
+			dd.elements.zoomed.addChild(dd.elements.dea);
+			dd.elements.transpbox.addChild(dd.elements.zoomed);
+			dd.elements.zoomed.isAtached = true;
+			drop();
+		</script>
+			
+		<div style="position:absolute; left: 600px; top:70px; height: 200x; width: 200px" height="500" width="200">
+			<br><br>
+			<iframe src="agentes.php" scrolling="no" width="300" height="200"></iframe>
+		</div>
+				
+		<div style="position:absolute; left: 60px; top:700px; height: 400x; width: 1200px" height="400" width="1200">
+			<br><br>
+			<iframe width="900px" height="400" src="log.php" scrolling="yes"></iframe>
+		</div>
+					
+		<div style="position:absolute; left: 600px; top:320px; height: 500x; width: 500px" height="500" width="500">
+			<br><br>
+			<iframe src="finalTimes.php" scrolling="no" width="360" height="340"></iframe>
+		</div>
+		
+		<div style="position:absolute; left: 60px; top:650px; height: 50x; width: 200px">
+			Download the <a href="salida.jpg">final image.</a>
+		</div>				
+
+	</body>
+	
+</html>
+

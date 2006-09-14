@@ -1,0 +1,75 @@
+<html>
+
+	<head>
+		<meta http-equiv="Content-Language" content="en-us">
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		
+		<title>MASYRO: A Multi-Agent SYstem for Rendering Optimization</title>
+
+		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	</head>
+
+	<body bgcolor="#e4dffa">
+
+		<form method="POST" action="validateModel.php" enctype="multipart/form-data">
+
+			<table width="550" border="0" cellpadding="0" cellspacing="0">
+				
+				<tr height="25">
+					<td width="70" align="right">
+						Division level:&nbsp;&nbsp;&nbsp;
+					</td>
+					<td width="25">
+						<select class="oneselection" size="1" name="divisionLevel">
+			 				<option>1</option>
+			 				<option>2</option>
+			 				<option>3</option>
+		 				</select>
+					</td>
+				</tr>
+				
+			</table>
+
+			<table width="550" border="0" cellpadding="0" cellspacing="0">
+			
+				<tr height="25">
+					<td width="50" align="right">
+						Optimization level:&nbsp;&nbsp;&nbsp;
+					</td>
+					<td width="25">
+						<select class="oneselection" size="1" name="optimizationLevel">
+							 <option>1</option>
+							 <option>2</option>
+							 <option>3</option>
+							 <option>4</option>
+							 <option>5</option>
+						 </select>
+					</td>
+				</tr>
+				
+			</table>
+			
+			<table width="550" border="0" cellpadding="0" cellspacing="0">
+	
+				<tr height="25">
+					<td width="100" align="right">
+						File:&nbsp;&nbsp;&nbsp;<br><i>(Only .zip files)</i>&nbsp;&nbsp;&nbsp;
+					</td>
+					<td width="350">
+						<input type="hidden" name="MAX_FILE_SIZE" value="15000000">
+						<input class="entrytexto" name="userfile" type="file">
+					</td>
+				</tr>
+				
+			</table>
+			
+			<div style="text-align: center; margin-bottom:10px;">
+			<div style="text-align: center;">
+				<input type="submit" value="Send" name="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</div>
+
+		</form>
+		
+	</body>
+	
+</html>

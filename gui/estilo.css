@@ -1,0 +1,148 @@
+/* ###### Body ###### */
+body {
+font-family: verdana, tahoma, helvetica, arial, sans-serif;
+font-size: 94 %;
+margin: 0;
+}
+h1, h2, h3 {
+font-family: arial, verdana, tahoma, sans-serif;
+}
+h1 {
+font-size: 164 %;
+font-weight: bold;
+font-style: italic;
+padding-top: 1em;
+border-top-style: solid;
+border-top-width: 1px;
+}
+p {
+padding-bottom: 1ex;
+}
+img {
+border: none;
+}
+code {
+font-family: \u201clucida console\u201d, monospace;
+font-size: 95 %;
+}
+dt {
+font-weight: bold;
+}
+dd {
+padding-bottom: 1.5em;
+}
+#textoCuerpo {
+text-align: justify;
+line-height: 1.5em;
+margin-left: 12em;
+padding: 0.5ex 14em 1em 1em;
+border-left-style: solid;
+border-left-width: 1px;
+}
+#textoCuerpo a {
+/* colores.css */
+}
+#textoCuerpo a:hover {
+text-decoration: none;
+}
+/* ###### Cabecera ###### */
+#cabecera{
+height: 4em;
+padding: 0.25em 2.5mm 0 4mm;
+}
+.cabeceraTitulo {
+font-size: 252 %;
+text-decoration: none;
+font-weight: bold;
+font-style: italic;
+line-height: 1.5em;
+}
+.cabeceraTitulo span {
+font-weight: normal;
+}
+.cabeceraEnlaces {
+font-size: 87 %;
+padding: 0.5ex 10em 0.5ex 1em;
+position: absolute;
+right: 0;
+top: 0;.
+}
+.cabeceraEnlaces * {
+text-decoration: none;
+padding: 0 2ex 0 1ex;
+}
+.cabeceraEnlaces a:hover {
+text-decoration: underline;
+}
+.barraMenu {
+text-align: center;
+padding: 0.5ex 0;
+}
+.barraMenu * {
+text-decoration: none;
+font-weight: bold;
+padding: 0 2ex 0 1ex;
+}
+.barraMenu a:hover {
+/* colores.css */
+}
+/* ###### Izquierda ###### */
+.barraIzquierda {
+font-size: 95 %;
+width: 12.65em;
+float: left;
+clear: left;
+}
+.barraIzquierda a, .barraIzquierda span {
+text-decoration: none;
+font-weight: bold;
+line-height: 2em;
+padding: 0.75ex 1ex;
+display: block;
+}
+[class\u02dc=\u201cbarraIzquierda\u201d] a, [class\u02dc=\u201cbarraIzquierda\u201d] span {
+line-height: 1.5em;
+}
+.barraIzquierda a:hover {
+/* colores.css */
+}
+.barraIzquierda .barraIzquierdaTitulo {
+font-weight: bold;
+padding: 0.75ex 1ex;
+}
+.barraIzquierda .barraTexto {
+font-weight: normal;
+padding: 1ex 0.75ex 1ex 1ex;
+}
+.barraIzquierda .laPagina{
+/* colores.css */
+}.
+/* ###### Derecha ###### */
+.barraDerecha {
+font-size: 95 %;
+width: 12.65em;
+margin: 2ex 0.8ex 0 0;
+float: right;
+clear: right;
+border-style: solid;
+border-width: 1px;
+}
+[class\u02dc=\u201cbarraDerecha\u201d] {
+margin-right: 1.5ex;
+}
+.barraDerecha a {
+font-weight: bold;
+}
+.barraDerecha a:hover {
+text-decoration: none;
+}
+.barraDerecha .barraIzquierdaTitulo {
+font-weight: bold;
+margin: 1em 1ex;
+padding: 0.75ex 1ex;
+}
+.barraDerecha .barraTexto {
+font-weight: normal;
+line-height: 1.5em;
+padding: 0 3ex 1em 2ex;
+}

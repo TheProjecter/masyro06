@@ -1,0 +1,76 @@
+*******************************************************************
+***	MASYRO: A MultiAgent SYstem for Render Optimization	***
+*******************************************************************
+
+Junto con
+el código fuente se incluye el siguiente script (initMASYRO.sh) para inicializar MASYRO:
+
+#!/bin/sh
+echo ""
+echo "Script to automate the MASYRO deployment"
+echo ""
+# Compilación del código fuente.
+slice2cpp --output-dir ../FIPA/generated/ ../FIPA/FIPA.ice
+make clean
+echo ""
+echo "Compiling the source code..."
+make
+echo ""
+
+Para arrancar MASYRO se utiliza el script startMASYRO.sh:
+
+#!/bin/sh
+echo ""
+echo "Script to start MASYRO"
+echo ""
+# Arrancando el nodo y el registro.
+echo "Starting the node and the registry..."
+icegridnode --Ice.Config=config/icegrid.cfg --daemon --nochdir
+sleep 5
+echo "Deploying MASYRO..."
+# Desplegando la aplicación
+icegridadmin --Ice.Config=config/icegridadmin.cfg
+-e "application add ./init/MASYRO.xml"
+icegridadmin --Ice.Config=config/icegridadmin.cfg
+-e "server start AMS"
+icegridadmin --Ice.Config=config/icegridadmin.cfg
+-e "server start DirectoryFacilitator"
+# Arrancando glacier2router
+echo ""
+echo "Starting glacier2router"
+glacier2router --Ice.Config=config/router.cfg
+
+Por defecto, y utilizando este script, todos los servicios de MASYRO se ejecutarán en la
+misma máquina en la que se ejecute el script. Sin embargo, si es necesario ajustar el archivo
+de configuración router.cfg, de forma que se especifiquen la dirección IP pública del equipo
+que ofrece la salida a Internet, y la IP privada en la que se ejecutan los servicios. Dicho archivo
+ha de quedar de la siguiente forma:
+
+Glacier2.Client.Endpoints=tcp -h <ip_privada> -p <puerto_maquina_ip_privada>
+Glacier2.Client.PublishedEndpoints=tcp -h <ip_publica> -p <puerto_publico>
+Glacier2.Server.Endpoints=tcp -h <ip_privada>
+Glacier2.CryptPasswords=config/passwords.cfg
+Ice.Trace.Network=2
+Ice.Default.Locator=IceGrid/Locator:tcp -h 127.0.0.1 -p 10000
+#Other properties
+Ice.Warn.Leaks=0
+Ice.MessageSizeMax=20480
+
+Para detener la aplicación basta con ejecutar el script (stopMASYRO.sh) siguiente:
+
+#!/bin/sh
+echo ""
+echo "Script to stop MASYRO"
+echo ""
+echo ""
+echo "Closing the MASYRO application..."
+icegridadmin --Ice.Config=config/icegridadmin.cfg -e "application remove MASYRO"
+echo "Shutdowning localhost..."
+icegridadmin --Ice.Config=config/icegridadmin.cfg -e "node shutdown localhost"
+
+Para iniciar un agente simplemente es necesario ejecutar la siguiente orden:
+
+python RenderAgent.py -i <xml_specification_file>
+
+La opción -i permite al usuario indicar el fichero de configuración para llevar a cabo la
+inicialización del agente.

@@ -1,0 +1,36 @@
+/* ###### Colores del texto ###### */
+#textoCuerpo a, .barraDerecha a
+{ color: #ff2020; }
+.barraIzquierda a
+{ color: #ff2020; }
+h1, .barraIzquierda span
+{ color: #a68c53; }
+.cabeceraTitulo, .cabeceraEnlaces *, .barraIzquierda
+.barraIzquierdaTitulo, .barraIzquierda .laPagina,
+.barraDerecha
+.barraIzquierdaTitulo
+{ color: black; }
+.barraMenu a:hover, .barraIzquierda a:hover
+{ color: black; }
+.barraIzquierda a:hover
+{ color: black; }
+.cabeceraTitulo span, .barraMenu, .barraMenu *
+{ color: white; }
+.cabeceraEnlaces
+{ color: #b82619; }
+/* ###### Colores de fondo ###### */
+body
+{ background-color: #c3c2c2; }
+#textoCuerpo, .cabeceraEnlaces, .barraMenu a:hover,
+.barraDerecha
+{ background-color: white; }
+#cabecera
+{ background-color: #b82619; }
+.barraMenu
+{ background-color: black; }
+.barraIzquierda .barraIzquierdaTitulo, .barraDerecha
+.barraIzquierdaTitulo
+{ background-color: #e6dfcf; }
+/* ###### Colores del borde ###### */
+h1, #textoCuerpo, .barraDerecha
+{ border-color: #e6dfcf; }

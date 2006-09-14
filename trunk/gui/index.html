@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=iso8859-1" />
+<meta name="author" content="David Vallejo Fernandez"/>
+<meta name="generator" content="Bluefish 1.0.5"/>
+<link rel="stylesheet" type="text/css" href="estilo.css" />
+<link rel="stylesheet" type="text/css" href="colores.css"/>
+<title>MASYRO: A Multi-Agent SYstem for Rendering Optimization</title>
+<style type="text/css"> .textoexp {
+font-family: Arial;
+color: black;
+font-size: 30pt;
+text-align: left;
+letter-spacing: -20px;
+} </style> <script type="text/javascript"> function
+expandirTexto(inicio, fin, paso, velo){
+if (inicio < fin){
+document.getElementById("textoexpand").style.letterSpacing = inicio+"px";
+inicio=inicio+paso;
+setTimeout("expandirTexto("+inicio+","+fin+","+paso+","+velo+")",velo);
+}
+}
+</script>
+</head>
+<body onLoad="expandirTexto(-20,30,1,5);">
+<div id="arriba"></div>
+<!-- ###### Cabecera ###### -->
+<div id="cabecera">
+<a href="./index.html" class="cabeceraTitulo" title="Homepage">
+<span class="textoexp" id="textoexpand">MASYRO</span></a>
+<div class="cabeceraEnlaces">
+<a href="http://oreto.inf-cr.uclm.es">ORETO Research Group</a>
+<a href="http://www.uclm.es">(UCLM)</a>
+</div>
+<div class="barraMenu">
+<a href="#intro">Introduction</a>
+<a href="#render">Render</a>
+</div>
+<!-- ###### Izquierda ###### -->
+<div class="barraIzquierda">
+<div class="barraIzquierdaTitulo">Contents</div>
+<a href="index.html/#intro">Introduction</a>
+<a href="index.html/#render">Render</a>
+</div>
+<!-- ###### Derecha ###### -->
+<div class="barraDerecha">
+</div>
+<!-- ###### Texto ###### -->
+<div id="textoCuerpo">
+<h1 id="Bienvenida"
+style="border-top: none; padding-top: 0;"><a name="intro">Introduction...</a></h1>
+<p><b>MASYRO</b> (Multi-Agent SYstem for Rendering Optimization) is a rendering distributed system which relies on a multi-agent architecture. It makes use of a previous analysis of the scene to divide the work in a number of work units, which will be distributed to the intelligent agents; and it uses an expert system to optimize the render.
+<h1 id="Notas"><a name="render">Render process...</a></h1>
+<dl>
+<center>
+  <iframe src="form.html" frameborder="0" height="140" width="550"></iframe>
+</center>
+</dl>
+</div>
+</body>
+</html>

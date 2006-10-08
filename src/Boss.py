@@ -64,7 +64,7 @@ class Boss (Ice.Application):
 
         if work == '':
             print 'Debe especificar el fichero de trabajo.'
-            print 'Sinopsis: python Analyst.py -i <file.xml> [- p <level>] -w <path_to_workfile> [-n <work_name>]'
+            print 'Sinopsis: python Boss.py -i <file.xml> [- p <level>] -w <path_to_workfile> [-n <work_name>]'
             sys.exit(0)
 
         return level, optimizationLevel, work, workName

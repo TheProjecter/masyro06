@@ -1,0 +1,1 @@
+MASYRO is a concrete instanciation of a multi-agent system, which has been created in this project. MASYRO optimizates the rendering time of a scene by using expert systems and by doing a previous analysis of the scene.
